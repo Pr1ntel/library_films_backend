@@ -1,12 +1,11 @@
 package com.example.library_films_backend.jwt_controllers;
 
 
+import com.example.library_films_backend.auth_services.AuthOrRegisterService;
 import com.example.library_films_backend.dto.AuthOrRegisterResponseDto;
 import com.example.library_films_backend.dto.AuthRequestDto;
 import com.example.library_films_backend.dto.RegisterRequestDto;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,7 +20,7 @@ public class AuthController {
     }
 
     @PostMapping("/auth")
-    public ResponseEntity<AuthOrRegisterResponseDto> auth(@RequestBody AuthRequestDto authRequestDto){
+    public AuthOrRegisterResponseDto auth(@RequestBody AuthRequestDto authRequestDto){
         return authOrRegisterService.auth(authRequestDto);
     }
 }
