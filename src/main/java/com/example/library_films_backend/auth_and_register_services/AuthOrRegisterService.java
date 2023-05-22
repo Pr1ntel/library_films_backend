@@ -1,4 +1,4 @@
-package com.example.library_films_backend.auth_services;
+package com.example.library_films_backend.auth_and_register_services;
 
 import com.example.library_films_backend.dto.AuthOrRegisterResponseDto;
 import com.example.library_films_backend.dto.AuthRequestDto;

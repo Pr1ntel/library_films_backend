@@ -1,7 +1,7 @@
 package com.example.library_films_backend.jwt_controllers;
 
 
-import com.example.library_films_backend.auth_services.AuthOrRegisterService;
+import com.example.library_films_backend.auth_and_register_services.AuthOrRegisterService;
 import com.example.library_films_backend.dto.AuthOrRegisterResponseDto;
 import com.example.library_films_backend.dto.AuthRequestDto;
 import com.example.library_films_backend.dto.RegisterRequestDto;
