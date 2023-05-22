@@ -12,17 +12,17 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/secure")
+@RequestMapping(path = "/api/v1/secure")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @AllArgsConstructor
 public class FilmsController {
     private final FilmsService filmsService;
     private final FilmsRepository filmsRepository;
 
-    @GetMapping(value = "/style-films")
+  /*  @GetMapping(value = "/all-films")
     public List<FilmsItem> getAll() {
         return filmsService.getAll();
     }
-
+*/
 
 }
