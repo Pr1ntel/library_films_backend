@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class AuthOrRegisterService {
+public class AuthOrRegisterService  {
     private final UsersRepository repository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
