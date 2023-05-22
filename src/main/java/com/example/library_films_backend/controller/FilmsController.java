@@ -17,12 +17,11 @@ import java.util.List;
 @AllArgsConstructor
 public class FilmsController {
     private final FilmsService filmsService;
-    private final FilmsRepository filmsRepository;
 
-  /*  @GetMapping(value = "/all-films")
+    @GetMapping(value = "/all-films")
     public List<FilmsItem> getAll() {
-        return filmsService.getAll();
+        List<FilmsItem> temp = filmsService.getAll();
+        return temp;
     }
-*/
 
 }

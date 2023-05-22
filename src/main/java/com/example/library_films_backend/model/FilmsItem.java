@@ -29,7 +29,7 @@ public class FilmsItem {
     @Column(name = "description_film")
     private String descriptionFilm;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "style_film_id")
     private StyleFilm styleFilmId;
 }
