@@ -19,7 +19,7 @@ public class AuthController {
         return authOrRegisterService.register(registerRequestDto);
     }
 
-    @PostMapping("/auth") // поправить
+    @PostMapping("/authenticate")
     public AuthOrRegisterResponseDto auth(@RequestBody AuthRequestDto authRequestDto){
         return authOrRegisterService.auth(authRequestDto);
     }
