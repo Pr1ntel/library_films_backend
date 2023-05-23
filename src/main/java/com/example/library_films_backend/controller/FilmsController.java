@@ -20,8 +20,8 @@ public class FilmsController {
 
     @GetMapping(value = "/all-films")
     public List<FilmsItem> getAll() {
-        List<FilmsItem> temp = filmsService.getAll();
-        return temp;
+       return filmsService.getAll();
+
     }
 
 }
