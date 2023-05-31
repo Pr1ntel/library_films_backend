@@ -3,8 +3,12 @@ package com.example.library_films_backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 @Entity
-@Table(name =  "style_film")
+@Table(name = "style_film")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,6 +18,6 @@ public class StyleFilm {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "style_film")
-    private String styleFilm;
+ @OneToMany(mappedBy = "styleFilm")
+    private List<FilmsItem> filmsItems = new ArrayList<>();
 }

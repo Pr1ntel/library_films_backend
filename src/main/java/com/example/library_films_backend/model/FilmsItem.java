@@ -1,7 +1,13 @@
 package com.example.library_films_backend.model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import javax.swing.text.Style;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "films")
@@ -28,8 +34,8 @@ public class FilmsItem {
 
     @Column(name = "description_film")
     private String descriptionFilm;
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+   /* @JsonIgnore*/
+    @ManyToOne
     @JoinColumn(name = "style_film_id")
-    private StyleFilm styleFilmId;
+    private StyleFilm styleFilm;
 }
