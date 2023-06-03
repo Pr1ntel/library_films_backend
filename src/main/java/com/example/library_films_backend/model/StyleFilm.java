@@ -18,6 +18,10 @@ public class StyleFilm {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
- @OneToMany(mappedBy = "styleFilm")
+    @Column(name = "name")
+    private String name;
+
+
+    @OneToMany(mappedBy = "styleFilm")
     private List<FilmsItem> filmsItems = new ArrayList<>();
 }

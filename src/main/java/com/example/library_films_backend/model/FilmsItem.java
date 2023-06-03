@@ -20,21 +20,21 @@ public class FilmsItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name_film")
-    private String nameFilm;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "release_date")
-    private int releaseDate;
+    @Column(name = "release_year")
+    private int releaseYear;
 
-    @Column(name = "duration_film")
-    private int durationFilm;
+    @Column(name = "duration")
+    private int duration;
 
-    @Column(name = "photo_film")
-    private String photoFilm;
+    @Column(name = "photo")
+    private String photo;
 
-    @Column(name = "description_film")
-    private String descriptionFilm;
-   /* @JsonIgnore*/
+    @Column(name = "description")
+    private String description;
+    /* @JsonIgnore*/
     @ManyToOne
     @JoinColumn(name = "style_film_id")
     private StyleFilm styleFilm;

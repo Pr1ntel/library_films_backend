@@ -1,5 +1,6 @@
 package com.example.library_films_backend.jwt_controllers;
 
+import com.example.library_films_backend.dto.FilmsItemResponseDto;
 import com.example.library_films_backend.model.FilmsItem;
 import com.example.library_films_backend.service.FilmsService;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class SecureController {
     private final FilmsService filmsService;
 
     @GetMapping(value = "/all-films")
-    public List<FilmsItem> getAll() {
+    public List<FilmsItemResponseDto> getAll() {
         return filmsService.getAll();
 
     }
