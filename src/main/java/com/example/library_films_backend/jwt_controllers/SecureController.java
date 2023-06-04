@@ -1,15 +1,13 @@
 package com.example.library_films_backend.jwt_controllers;
 
+import com.example.library_films_backend.dto.FilmsItemRequestDto;
 import com.example.library_films_backend.dto.FilmsItemResponseDto;
 import com.example.library_films_backend.jobs.JobsService;
 import com.example.library_films_backend.model.FilmsItem;
 import com.example.library_films_backend.service.FilmsService;
 import lombok.AllArgsConstructor;
 import org.quartz.SchedulerException;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,7 +25,12 @@ public class SecureController {
     }
 
     @GetMapping(value = "/rekl")
-            public void run() throws SchedulerException {
+    public void run() throws SchedulerException {
         jobsService.run();
+    }
+
+    @PostMapping(value = "/add-films")
+    public void addNew(@RequestBody FilmsItem filmsItem) {
+        filmsService.addNewFilm(filmsItem);
     }
 }

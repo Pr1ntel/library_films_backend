@@ -1,5 +1,6 @@
 package com.example.library_films_backend.service;
 
+import com.example.library_films_backend.dto.FilmsItemRequestDto;
 import com.example.library_films_backend.dto.FilmsItemResponseDto;
 import com.example.library_films_backend.model.FilmsItem;
 import com.example.library_films_backend.repository.FilmsRepository;
@@ -30,6 +31,10 @@ public class FilmsService {
 
     public FilmsItem findFilmByName(String name) {
         return filmsRepository.findFilmsItemByName(name);
+    }
+
+    public FilmsItem addNewFilm(FilmsItem filmsItem ){
+       return filmsRepository.save(filmsItem);
     }
 
 }
