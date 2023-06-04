@@ -20,6 +20,9 @@ public class FilmsService {
                         .id(filmsItem.getId())
                         .name(filmsItem.getName())
                         .styleFilmName(filmsItem.getStyleFilm().getName())
+                        .releaseYear(filmsItem.getReleaseYear())
+                        .description(filmsItem.getDescription())
+                        .duration(filmsItem.getDuration())
                         .build()
         ).collect(Collectors.toList());
 

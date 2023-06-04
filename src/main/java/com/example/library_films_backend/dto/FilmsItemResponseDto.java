@@ -9,5 +9,8 @@ public class FilmsItemResponseDto {
     private int id;
     private String name;
     private String styleFilmName;
+    private int releaseYear;
+    private String description;
+    private int duration;
 
 }
