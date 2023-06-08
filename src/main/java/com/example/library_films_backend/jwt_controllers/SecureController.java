@@ -4,7 +4,6 @@ package com.example.library_films_backend.jwt_controllers;
 import com.example.library_films_backend.dto.FilmsItemRequestDto;
 import com.example.library_films_backend.dto.FilmsItemResponseDto;
 import com.example.library_films_backend.jobs.JobsService;
-import com.example.library_films_backend.model.FilmsItem;
 import com.example.library_films_backend.service.FilmsService;
 import lombok.AllArgsConstructor;
 import org.quartz.SchedulerException;

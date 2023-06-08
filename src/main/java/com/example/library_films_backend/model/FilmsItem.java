@@ -1,13 +1,10 @@
 package com.example.library_films_backend.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
-import javax.swing.text.Style;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Entity
 @Table(name = "films")
