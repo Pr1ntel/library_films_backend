@@ -1,4 +1,5 @@
 package com.example.library_films_backend.repository;
+import com.example.library_films_backend.dto.FilmsItemRequestDto;
 import com.example.library_films_backend.model.FilmsItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

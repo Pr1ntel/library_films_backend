@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class FilmsItemRequestDto {
     private String name;
-    private String styleFilm;
+    private int styleFilmId;
     private int releaseYear;
     private String description;
     private int duration;

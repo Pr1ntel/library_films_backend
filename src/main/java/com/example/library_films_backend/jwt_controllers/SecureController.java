@@ -1,5 +1,6 @@
 package com.example.library_films_backend.jwt_controllers;
 
+
 import com.example.library_films_backend.dto.FilmsItemRequestDto;
 import com.example.library_films_backend.dto.FilmsItemResponseDto;
 import com.example.library_films_backend.jobs.JobsService;
@@ -30,7 +31,7 @@ public class SecureController {
     }
 
     @PostMapping(value = "/add-films")
-    public void addNew(@RequestBody FilmsItem filmsItem) {
-        filmsService.addNewFilm(filmsItem);
+    public void addNew(@RequestBody FilmsItemRequestDto filmsItemRequestDto) {
+      filmsService.addNew(filmsItemRequestDto);
     }
 }
