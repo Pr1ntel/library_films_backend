@@ -7,6 +7,7 @@ import com.example.library_films_backend.jobs.JobsService;
 import com.example.library_films_backend.service.FilmsService;
 import lombok.AllArgsConstructor;
 import org.quartz.SchedulerException;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,6 +32,12 @@ public class SecureController {
 
     @PostMapping(value = "/add-films")
     public void addNew(@RequestBody FilmsItemRequestDto filmsItemRequestDto) {
-      filmsService.addNew(filmsItemRequestDto);
+        filmsService.addNew(filmsItemRequestDto);
+    }
+
+
+    @DeleteMapping(value = "/delete-films/{name}")
+    public void deleteFilmsByName(@PathVariable String name) {
+        filmsService.deleteFilmsByName(name);
     }
 }
