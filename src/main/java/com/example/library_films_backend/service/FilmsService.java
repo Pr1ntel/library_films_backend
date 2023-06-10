@@ -36,6 +36,11 @@ public class FilmsService {
         return filmsRepository.findFilmsItemByName(name);
     }
 
+
+    public FilmsItem deleteFilmsByName(String name){
+        return filmsRepository.removeByName(name);
+    }
+
 public void addNew(FilmsItemRequestDto filmsItemRequestDto){
     StyleFilm findStyleFilm = styleFilmRepository.findById(filmsItemRequestDto.getStyleFilmId()).get();
     FilmsItem insertFilmsItem = FilmsItem.builder()
