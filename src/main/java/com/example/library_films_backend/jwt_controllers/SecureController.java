@@ -4,10 +4,11 @@ package com.example.library_films_backend.jwt_controllers;
 import com.example.library_films_backend.dto.FilmsItemRequestDto;
 import com.example.library_films_backend.dto.FilmsItemResponseDto;
 import com.example.library_films_backend.jobs.JobsService;
+import com.example.library_films_backend.model.FilmsItem;
 import com.example.library_films_backend.service.FilmsService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.quartz.SchedulerException;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,6 +39,6 @@ public class SecureController {
 
     @DeleteMapping(value = "/delete-films/{name}")
     public void deleteFilmsByName(@PathVariable String name) {
-        filmsService.deleteFilmsByName(name);
+        filmsService.deleteByName(name);
     }
 }

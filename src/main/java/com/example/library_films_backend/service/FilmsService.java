@@ -32,13 +32,10 @@ public class FilmsService {
 
     }
 
-    public FilmsItem findFilmByName(String name) {
-        return filmsRepository.findFilmsItemByName(name);
-    }
 
 
-    public FilmsItem deleteFilmsByName(String name){
-        return filmsRepository.removeByName(name);
+    public FilmsItem deleteByName(String name){
+        return filmsRepository.deleteFilmByName(name);
     }
 
 public void addNew(FilmsItemRequestDto filmsItemRequestDto){
