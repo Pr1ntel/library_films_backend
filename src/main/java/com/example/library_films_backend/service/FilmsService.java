@@ -6,6 +6,7 @@ import com.example.library_films_backend.model.FilmsItem;
 import com.example.library_films_backend.model.StyleFilm;
 import com.example.library_films_backend.repository.FilmsRepository;
 import com.example.library_films_backend.repository.StyleFilmRepository;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 @AllArgsConstructor
 public class FilmsService {
     private final FilmsRepository filmsRepository;
@@ -33,9 +35,12 @@ public class FilmsService {
     }
 
 
-
-    public FilmsItem deleteByName(String name){
-        return filmsRepository.deleteFilmByName(name);
+@Transactional
+    public void deleteByName(String name){
+         filmsRepository.deleteByName(name);
+    }
+    public FilmsItem findFilmByName(String name){
+        return filmsRepository.findByName(name);
     }
 
 public void addNew(FilmsItemRequestDto filmsItemRequestDto){
