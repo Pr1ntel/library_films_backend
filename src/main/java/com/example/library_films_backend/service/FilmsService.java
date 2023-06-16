@@ -34,10 +34,13 @@ public class FilmsService {
 
     }
 
+public void getByName(String name){
+   filmsRepository.getByName(name);
+}
 
-@Transactional
     public void deleteByName(String name){
-         filmsRepository.deleteByName(name);
+         getByName(filmsRepository.deleteByName(name));
+
     }
     public FilmsItem findFilmByName(String name){
         return filmsRepository.findByName(name);
