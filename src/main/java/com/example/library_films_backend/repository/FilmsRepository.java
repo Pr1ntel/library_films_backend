@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FilmsRepository extends JpaRepository<FilmsItem, Integer> {
-    FilmsItem deleteByName(String name);
+    String deleteByName(String name);
     FilmsItem findByName(String name);
+
+    FilmsItem getByName(String name);
+    FilmsItem deleteById(int id);
 
 }
