@@ -9,6 +9,6 @@ public interface FilmsRepository extends JpaRepository<FilmsItem, Integer> {
     FilmsItem findByName(String name);
 
     FilmsItem getByName(String name);
-    FilmsItem deleteById(int id);
+
 
 }

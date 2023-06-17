@@ -42,9 +42,6 @@ public void getByName(String name){
          getByName(filmsRepository.deleteByName(name));
 
     }
-    public FilmsItem findFilmByName(String name){
-        return filmsRepository.findByName(name);
-    }
 
 public void addNew(FilmsItemRequestDto filmsItemRequestDto){
     StyleFilm findStyleFilm = styleFilmRepository.findById(filmsItemRequestDto.getStyleFilmId()).get();
