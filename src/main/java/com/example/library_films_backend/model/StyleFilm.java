@@ -21,7 +21,6 @@ public class StyleFilm {
     @Column(name = "name")
     private String name;
 
-
     @OneToMany(mappedBy = "styleFilm")
     private List<FilmsItem> filmsItems = new ArrayList<>();
 }
