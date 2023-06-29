@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 public interface FilmsRepository extends JpaRepository<FilmsItem, Integer> {
     String deleteByName(String name);
     FilmsItem findByName(String name);
-
     FilmsItem getByName(String name);
 
 

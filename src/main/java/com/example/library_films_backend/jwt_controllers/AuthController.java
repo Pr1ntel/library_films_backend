@@ -5,6 +5,7 @@ import com.example.library_films_backend.auth_and_register_services.AuthOrRegist
 import com.example.library_films_backend.dto.AuthOrRegisterResponseDto;
 import com.example.library_films_backend.dto.AuthRequestDto;
 import com.example.library_films_backend.dto.RegisterRequestDto;
+import com.example.library_films_backend.repository.UsersRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class AuthController {
     private final AuthOrRegisterService authOrRegisterService;
+    private final UsersRepository usersRepository;
 
     @PostMapping("/register")
     public AuthOrRegisterResponseDto register(@RequestBody RegisterRequestDto registerRequestDto){

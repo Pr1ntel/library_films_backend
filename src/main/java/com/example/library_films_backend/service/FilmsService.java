@@ -20,6 +20,7 @@ public class FilmsService {
     private final FilmsRepository filmsRepository;
     private final StyleFilmRepository styleFilmRepository;
 
+
     public List<FilmsItemResponseDto> getAll() {
         return filmsRepository.findAll().stream().map(
                 filmsItem -> FilmsItemResponseDto.builder()
@@ -34,26 +35,26 @@ public class FilmsService {
 
     }
 
-public void getByName(String name){
-   filmsRepository.getByName(name);
-}
+    public void getByName(String name) {
+        filmsRepository.getByName(name);
+    }
 
-    public void deleteByName(String name){
-         getByName(filmsRepository.deleteByName(name));
+    public void deleteByName(String name) {
+        getByName(filmsRepository.deleteByName(name));
 
     }
 
-public void addNew(FilmsItemRequestDto filmsItemRequestDto){
-    StyleFilm findStyleFilm = styleFilmRepository.findById(filmsItemRequestDto.getStyleFilmId()).get();
-    FilmsItem insertFilmsItem = FilmsItem.builder()
-            .name(filmsItemRequestDto.getName())
-            .releaseYear(filmsItemRequestDto.getReleaseYear())
-            .description(filmsItemRequestDto.getDescription())
-            .duration(filmsItemRequestDto.getDuration())
-            .styleFilm(findStyleFilm)
-            .build();
-    filmsRepository .save(insertFilmsItem);
-}
+    public void addNew(FilmsItemRequestDto filmsItemRequestDto) {
+        StyleFilm findStyleFilm = styleFilmRepository.findById(filmsItemRequestDto.getStyleFilmId()).get();
+        FilmsItem insertFilmsItem = FilmsItem.builder()
+                .name(filmsItemRequestDto.getName())
+                .releaseYear(filmsItemRequestDto.getReleaseYear())
+                .description(filmsItemRequestDto.getDescription())
+                .duration(filmsItemRequestDto.getDuration())
+                .styleFilm(findStyleFilm)
+                .build();
+        filmsRepository.save(insertFilmsItem);
+    }
 
 }
 

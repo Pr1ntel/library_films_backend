@@ -13,7 +13,7 @@ public class UserService {
     private final UsersRepository usersRepository;
 
 
-    public User getUserById(int userId){
+    public User getUserById(int userId) {
         return usersRepository.getById(userId);
     }
 

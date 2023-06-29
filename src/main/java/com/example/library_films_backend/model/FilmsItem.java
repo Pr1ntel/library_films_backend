@@ -38,7 +38,7 @@ public class FilmsItem {
     @JoinColumn(name = "style_film_id")
     private StyleFilm styleFilm;
 
-    @OneToMany(mappedBy = "filmsItem")
-    private List<FilmsItem> filmsItems = new ArrayList<>();
+
+
 
 }

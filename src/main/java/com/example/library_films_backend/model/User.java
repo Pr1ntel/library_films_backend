@@ -27,8 +27,7 @@ public class User implements UserDetails {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<User> users = new ArrayList<>();
+
 
 
     @Override
