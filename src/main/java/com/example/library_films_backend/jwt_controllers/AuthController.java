@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
     private final AuthOrRegisterService authOrRegisterService;
     private final UsersRepository usersRepository;
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AuthController.class);
 
     @PostMapping("/register")
     public AuthOrRegisterResponseDto register(@RequestBody RegisterRequestDto registerRequestDto){
         return authOrRegisterService.register(registerRequestDto);
+
     }
 
     @PostMapping("/authenticate")

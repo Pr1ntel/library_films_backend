@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @AllArgsConstructor
-public class    ApplicationConfig {
+public class ApplicationConfig {
 
     private final UsersRepository repository;
 
@@ -42,4 +42,6 @@ public class    ApplicationConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+
 }

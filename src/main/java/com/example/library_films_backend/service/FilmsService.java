@@ -2,6 +2,7 @@ package com.example.library_films_backend.service;
 
 import com.example.library_films_backend.dto.FilmsItemRequestDto;
 import com.example.library_films_backend.dto.FilmsItemResponseDto;
+import com.example.library_films_backend.jwt_controllers.AuthController;
 import com.example.library_films_backend.model.FilmsItem;
 import com.example.library_films_backend.model.StyleFilm;
 import com.example.library_films_backend.repository.FilmsRepository;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 public class FilmsService {
     private final FilmsRepository filmsRepository;
     private final StyleFilmRepository styleFilmRepository;
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(FilmsService.class);
 
 
     public List<FilmsItemResponseDto> getAll() {
