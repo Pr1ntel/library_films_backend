@@ -4,9 +4,6 @@ package com.example.library_films_backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 @Entity
 @Table(name = "films")
@@ -19,7 +16,7 @@ public class FilmsItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "release_year")
@@ -33,9 +30,9 @@ public class FilmsItem {
 
     @Column(name = "description")
     private String description;
-    /* @JsonIgnore*/
+
     @ManyToOne
-    @JoinColumn(name = "style_film_id")
+    @JoinColumn(name = "style_film_id", nullable = false)
     private StyleFilm styleFilm;
 
 
