@@ -5,6 +5,7 @@ import com.example.library_films_backend.dto.AuthRequestDto;
 import com.example.library_films_backend.dto.RegisterRequestDto;
 import com.example.library_films_backend.model.User;
 import com.example.library_films_backend.repository.UsersRepository;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,7 +20,7 @@ public class AuthOrRegisterService  {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public AuthOrRegisterResponseDto register(RegisterRequestDto registerRequestDto) {
+    public AuthOrRegisterResponseDto register(@Valid RegisterRequestDto registerRequestDto) {
         User user = User.builder()
                 .username(registerRequestDto.getUsername())
                 .password(passwordEncoder.encode(registerRequestDto.getPassword()))
@@ -34,7 +35,7 @@ public class AuthOrRegisterService  {
 
     }
 
-    public AuthOrRegisterResponseDto auth(AuthRequestDto authRequestDto) {
+    public AuthOrRegisterResponseDto auth(@Valid AuthRequestDto authRequestDto) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         authRequestDto.getUsername(),

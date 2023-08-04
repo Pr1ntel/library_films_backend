@@ -7,6 +7,7 @@ import com.example.library_films_backend.model.StyleFilm;
 import com.example.library_films_backend.repository.FilmsRepository;
 import com.example.library_films_backend.repository.StyleFilmRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -44,7 +45,7 @@ public class FilmsService {
 
     }
 
-    public void addNew(FilmsItemRequestDto filmsItemRequestDto) {
+    public void addNew(@Valid FilmsItemRequestDto filmsItemRequestDto) {
         StyleFilm findStyleFilm = styleFilmRepository.findById(filmsItemRequestDto.getStyleFilmId()).get();
         FilmsItem insertFilmsItem = FilmsItem.builder()
                 .name(filmsItemRequestDto.getName())
