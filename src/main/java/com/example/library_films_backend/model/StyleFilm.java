@@ -12,12 +12,16 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 public class StyleFilm {
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    public int getId(int id) {
+        return id;
+    }
+
     @Column(name = "name")
     private String name;
-
 
 }
