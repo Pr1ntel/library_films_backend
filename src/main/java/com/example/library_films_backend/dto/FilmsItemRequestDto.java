@@ -15,8 +15,9 @@ public class FilmsItemRequestDto {
     private String name;
     @Min(1) @Max(6) @NotNull
     private int styleFilmId;
-    @Min(0)
+    @Min(1980)
     private int releaseYear;
     private String description;
+    @Min(0)
     private int duration;
 }

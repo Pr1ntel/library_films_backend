@@ -7,6 +7,8 @@ import com.example.library_films_backend.dto.AuthRequestDto;
 import com.example.library_films_backend.dto.RegisterRequestDto;
 import com.example.library_films_backend.repository.UsersRepository;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,16 +17,22 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
     private final AuthOrRegisterService authOrRegisterService;
     private final UsersRepository usersRepository;
-    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AuthController.class);
+    private final Logger logger = LoggerFactory.getLogger(AuthController.class);
+
 
     @PostMapping("/register")
-    public AuthOrRegisterResponseDto register(@RequestBody RegisterRequestDto registerRequestDto){
+    public AuthOrRegisterResponseDto register(@RequestBody RegisterRequestDto registerRequestDto) {
         return authOrRegisterService.register(registerRequestDto);
-
     }
 
     @PostMapping("/authenticate")
-    public AuthOrRegisterResponseDto auth(@RequestBody AuthRequestDto authRequestDto){
-        return authOrRegisterService.auth(authRequestDto);
+    public AuthOrRegisterResponseDto auth(@RequestBody AuthRequestDto authRequestDto) {
+        try {
+            return authOrRegisterService.auth(authRequestDto);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.warn("asd" + authRequestDto);
+        }
+        return null;
     }
 }
